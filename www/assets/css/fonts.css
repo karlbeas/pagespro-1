@@ -1,0 +1,78 @@
+/* Cabin */
+@font-face {
+  font-family: "Cabin Bold";
+  src: url(../fonts/cabin/Cabin-Bold.ttf);
+}
+@font-face {
+  font-family: "Cabin Medium";
+  src: url(../fonts/cabin/Cabin-Medium.ttf);
+}
+@font-face {
+  font-family: "Cabin Regular";
+  src: url(../fonts/cabin/Cabin-Regular.ttf);
+}
+@font-face {
+  font-family: "Cabin SemiBold";
+  src: url(../fonts/cabin/Cabin-SemiBold.ttf);
+}
+
+/* Cereal */
+@font-face {
+  font-family: "Cereal Black";
+  src: url(../fonts/cereal/AirbnbCerealBlack.ttf);
+}
+@font-face {
+  font-family: "Cereal Bold";
+  src: url(../fonts/cereal/AirbnbCerealBold.ttf);
+}
+@font-face {
+  font-family: "Cereal Book";
+  src: url(../fonts/cereal/AirbnbCerealBook.ttf);
+}
+@font-face {
+  font-family: "Cereal ExtraBold";
+  src: url(../fonts/cereal/AirbnbCerealExtraBold.ttf);
+}
+@font-face {
+  font-family: "Cereal Light";
+  src: url(../fonts/cereal/AirbnbCerealLight.ttf);
+}
+@font-face {
+  font-family: "Cereal Medium";
+  src: url(../fonts/cereal/AirbnbCerealMedium.ttf);
+}
+
+@font-face {
+  font-family: "Cereal Medium";
+  src: url(../fonts/cereal/AirbnbCerealMedium.ttf);
+}
+
+/* Product sans */
+@font-face {
+  font-family: "Product Black";
+  src: url(../fonts/google/ProductSans-Black.ttf);
+}
+@font-face {
+  font-family: "Product Bold";
+  src: url(../fonts/google/ProductSans-Bold.ttf);
+}
+@font-face {
+  font-family: "Product Light";
+  src: url(../fonts/google/ProductSans-Light.ttf);
+}
+@font-face {
+  font-family: "Product Medium";
+  src: url(../fonts/google/ProductSans-Medium.ttf);
+}
+@font-face {
+  font-family: "Product Regular";
+  src: url(../fonts/google/ProductSans-Regular.ttf);
+}
+@font-face {
+  font-family: "Product Thin";
+  src: url(../fonts/google/ProductSans-Thin.ttf);
+}
+
+
+
+
