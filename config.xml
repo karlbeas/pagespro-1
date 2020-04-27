@@ -8,6 +8,7 @@
         PagesPro Team
     </author>
     <content src="index.html" />
+    <icon src="icon.png" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -34,5 +35,4 @@
     <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
     <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^7.1.4" />
-	<icon src="www/img/logo.png" />
 </widget>
