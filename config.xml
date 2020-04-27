@@ -8,7 +8,6 @@
         PagesPro Team
     </author>
     <content src="index.html" />
-    <icon src="icon.png" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -27,10 +26,11 @@
         <icon density="xhdpi" src="www/img/logo.png" />
     </platform>
     <platform name="ios">
+	<icon src="icon.png" gap:platform="ios" width="57" height="57" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="Orientation" value="portrait" />
-		<splash src="www/screen/iphone.png" width="768" height="1280"/>
+	<splash src="www/screen/iphone.png" width="768" height="1280"/>
     </platform>
     <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
     <engine name="ios" spec="^4.5.5" />
