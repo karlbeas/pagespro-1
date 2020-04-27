@@ -26,10 +26,11 @@
         <icon density="xhdpi" src="www/img/logo.png" />
     </platform>
     <platform name="ios">
-	<icon src="icon.png" platform="ios" width="60" height="60" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="Orientation" value="portrait" />
+	<icon src="www/img/Icon-Small@2x.png" platform="ios" width="58" height="58" />
+	<icon src="www/img/Icon-Small@3x.png" platform="ios" width="87" height="87" />
 	<splash src="www/screen/iphone.png" width="768" height="1280"/>
     </platform>
     <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
