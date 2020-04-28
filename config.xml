@@ -39,6 +39,12 @@
         <icon height="60" platform="ios" src="www/img/Icon-App-20x20@3x.png" width="60" />
         <icon height="40" platform="ios" src="www/img/Icon-App-20x20@2x.png" width="40" />
         <splash height="1280" src="www/screen/iphone.png" width="768" />
+		<config-file platform="ios" parent="UIStatusBarHidden" target="*-Info.plist" >
+			<true/>
+		</config-file>
+		<config-file platform="ios" parent="UIStatusBarHidden" target="*-Info.plist" >
+			<false/>
+		</config-file>
     </platform>
     <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
     <engine name="ios" spec="^4.5.5" />
