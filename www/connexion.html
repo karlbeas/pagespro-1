@@ -565,6 +565,7 @@
 					})
 					.fail(function (jqXHR, textStatus, errorThrown) 
 					{ 
+						$("#wait").hide();
 						localStorage['internet'] = '0';
 						OpenModalURL("no-connexion.html");
 					});
