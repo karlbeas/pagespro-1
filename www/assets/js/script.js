@@ -41,6 +41,12 @@ function TestConnexion()
 	});
 }
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    StatusBar.hide();
+}
+
 /* Fonctions génériques */
 (function($){
     $.fn.shake = function(settings) {
