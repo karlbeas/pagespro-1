@@ -495,7 +495,7 @@
 			$('.btn-conn').click(function(){
 				if($('.btn-conn').hasClass("btn-conn-active"))
 				{
-				
+					$("#wait").show();
 					$.ajax({
 						method: "POST",
 						url: SERVER_API + "dev/check_internet_connexion/",
@@ -558,6 +558,7 @@
 						}
 						else
 						{
+							$("#wait").hide();
 							localStorage['internet'] = '0';
 							OpenModalURL("no-connexion.html");
 						}
