@@ -33,7 +33,7 @@ function TestConnexion()
 		{
 			localStorage['internet'] = '0';
 		}
-		console.log(msg);
+		//console.log(msg);
 	})
 	.fail(function (jqXHR, textStatus, errorThrown) 
 	{ 
