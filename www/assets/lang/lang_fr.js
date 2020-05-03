@@ -24,6 +24,9 @@ var connexion_text_fr =
 				"msg_conn_2"			:	"Saisissez le code à 4 chiffres que pagespro vient d'envoyer au <span class='recap-numero'></span> <br/> Temps restant <span class='temps-restant'></span>",
 				"msg_resend"			:	"Vous n'avez pas re&ccedil;u de SMS ? <span class='btn-renvoyer'>Renvoyer</span> ou",
 				"msg_new_number"		:	"Changez le numéro",
+				"titre_conn_3"			:	"Votre profil",
+				"msg_conn_3"			:	"Merci de saisir des informations correctes pour vivre une expérience digitale exceptionnelle.",
+				"msg_nom"				:	"Nom d'utilisateur",
 			};
 			
 var noconnexion_text_fr = 

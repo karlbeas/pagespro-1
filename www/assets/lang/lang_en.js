@@ -24,6 +24,9 @@ var connexion_text_en =
 				"msg_conn_2"			:	"Enter the 4-digit code that pagespro has just sent to <span class='recap-numero'></span> <br/> Remaining time <span class='temps-restant'></span>", 
 				"msg_resend"			:	"Didn't get a text message ? <span class='btn-renvoyer'>Resend</span> or", 
 				"msg_new_number"		:	"Change the phone number", 
+				"titre_conn_3"			:	"Your profile",
+				"msg_conn_3"			:	"Please enter correct information for an exceptional digital experience.",
+				"msg_nom"				:	"User name",
 			};
 			
 var noconnexion_text_en = 

@@ -40,6 +40,8 @@
 		<link rel="stylesheet" href="assets/css/fonts.css">
         <title>Pagespro</title>
 		<style>
+			/* Android */
+			/*
 			body
 			{
 				position: fixed;
@@ -87,6 +89,196 @@
 				line-height: 22px;
 				margin-top: 10px;
 			}
+			*/
+			
+			/* iOS */
+			
+			body
+			{
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height:100%;
+				overflow: hidden;
+			}
+			.page_connexion
+			{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height:100%;
+				overflow: hidden;
+				background: #ffffff;
+				text-align: left;
+				padding-left: 20px;
+				padding-right: 20px;
+				padding-top: 50px;
+				opacity: 0;
+				transition: opacity 0.8s;
+			}
+			.connexion-logo img
+			{
+				width: 50px;
+				filter: grayscale(100%);
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+			.connexion-titre
+			{
+				font-family: "Cereal Medium";
+				padding-top: 15px;
+				font-size: 25px;
+				color: #363636;
+			}
+			.code-tire
+			{
+				font-size: 13px;
+				color: #393939;
+				line-height: 22px;
+				margin-top: 10px;
+			}
+			.connexion-box-numero
+			{
+				margin-top: 15px;
+				width: 100%;
+				height: 55px;
+				border-radius: 8px;
+				overflow: hidden;
+			}
+			.box-numero
+			{
+				border: 1px solid #eee;
+				border-radius: 8px;
+				width: 100%;
+				height: 55px;
+				padding: 7px 10px;
+				transition: border 0.3s, background 0.3s;
+			}
+			.box-numero-alert
+			{
+				border: 1px solid #ff6b6b;
+				background: #ffeaea;
+				transition: border 0.3s, background 0.3s;
+			}
+			.titre-numero
+			{
+				font-family: "Product Regular";
+				color: #999;
+				font-size: 0px;
+				line-height: 0px;
+				transition: line-height 0.3s, font-size 0.3s;
+			}
+			.titre-numero-alert
+			{
+				color: #ff6b6b;
+				transition: color 0.3s;
+			}
+			.champ-nom-utilisateur
+			{
+				border: 0px;
+				width: 100%;
+				margin-top: 6px;
+				font-family: "Product Regular";
+				font-size: 18px;
+				transition: margin-top 0.3s, font-size 0.3s;
+			}
+			.champ-nom-utilisateur-alert
+			{
+				background: #ffeaea;
+				transition: background 0.3s;
+			}
+			.connexion-contenu
+			{
+				font-family: "Product Regular";
+				margin-top: 10px;
+				width: 100%;
+				color: #636363;
+				font-size: 11px;
+			}
+			.btn-conn
+			{
+				border-radius: 25px;
+				width: 100%;
+				background: #c9c9c9;
+				color: #ffffff;
+				font-size: 15px;
+				margin-top: 15px;
+				transition: background 0.3s;
+				padding: 10px 0px;
+			}
+			.btn-conn-active
+			{
+				background: #303030;
+				transition: background 0.3s;
+			}
+			.bloc-photo
+			{
+				text-align: center;
+				margin-top: 20px;
+				margin-bottom: 10px;
+			}
+			.cadre-preview
+			{
+				width: 120px;
+				height: 120px;
+				border-radius: 50%;
+				border: 1px solid #e9e9e9;
+				margin: 0 auto;
+			}
+			.preview
+			{
+				position: absolute;
+				width: 120px;
+				height: 120px;
+				border-radius: 50%;
+				margin: 0 auto;
+				background: #f3f3f3;
+			}
+			.bg_preview
+			{
+				position: absolute;
+				bottom: 10px;
+				right: 5px;
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+				background: #e5c304;
+			}
+			.icamera
+			{
+				position: absolute;
+				bottom: 7px;
+				right: 7px;
+				font-size: 18px;
+				color: #333333;
+			}
+			.con-image-user
+			{
+				position: absolute;
+				left: 0px;
+				width: 120px;
+				height: 120px;
+				border-radius: 50%;
+				opacity: 0;
+			}
+			.image_user_preview
+			{
+				position: absolute;
+				left: 0px;
+				width: 0px;
+				height: 0px;
+				border-radius: 50%;
+				object-fit: cover;
+				border: 0px;
+			}
+			.image_user_preview_active
+			{
+				width: 120px;
+				height: 120px;
+			}
 			
 		</style>
     </head>
@@ -94,9 +286,28 @@
 		
 		<div class="page_connexion">
 			<div class="connexion-logo"><img src="img/logo.png" /></div>
-			<div class="connexion-titre ">Ajoutez quelques informations</div>
-			<div class="code-tire">
+			<div class="connexion-titre txt-titre-con">Ajoutez vos informations</div>
+			<div class="code-tire txt-contenu-con">
 				Merci de saisir des informations correctes pour vivre une expérience digitale exceptionnelle.
+			</div>
+			<div class="bloc-photo">
+				<div class="cadre-preview">
+					<div class="preview">
+						<img id="img_preview" class="image_user_preview" src="" />
+						<div class="bg_preview"><i class="fa fa-camera icamera"></i></div>
+						<input type="file" class="con-image-user" id="img_user" name="img_user" accept="image/x-png, image/gif, image/jpeg, image/jpg" />
+						<input type="hidden" id="img_user_base64" name="img_user_base64" />
+					</div>
+				</div>
+			</div>
+			<div class="connexion-box-numero">
+				<div class="box-numero">
+					<div class="titre-numero txt-titre-numero">Nom d'utilisateur</div>
+					<div class="div-numero"><input type="text" class="champ-nom-utilisateur txt-numero" id="nom_user" placeholder="Nom d'utilisateur" /></div>
+				</div>
+			</div>
+			<div class="connexion-btn">
+				<div class="btn btn-conn txt-btn-continuer">Continuer</div>
 			</div>
 			
 		</div>
@@ -128,7 +339,11 @@
 			if(lang == 'fr'){ var_texte = connexion_text_fr; } else { var_texte = connexion_text_en; }
 			
 			//Les textes traduits
-			$('.txt-titre-con').html(var_texte["titre_conn"]);
+			$('.txt-titre-con').html(var_texte["titre_conn_3"]);
+			$('.txt-contenu-con').html(var_texte["msg_conn_3"]);
+			$('.txt-titre-numero').html(var_texte["msg_nom"]);
+			$('.txt-numero').html(var_texte["msg_nom"]);
+			$('.txt-btn-continuer').html(var_texte["btn_continuer"]);
 			
 			$(window).on('load', function() {
 				$("#wait").hide();
@@ -136,6 +351,154 @@
 				$(".connexion-logo img").attr("style","animation-name: color-logo;");
 			});
 			
+			
+			$(".champ-nom-utilisateur").focus(function(){
+				$(".champ-nom-utilisateur").attr("style","margin-top: 0px;  font-size: 16px;");
+				$(".champ-nom-utilisateur").attr("placeholder","");
+				$(".titre-numero").attr("style","font-size: 10px; line-height: 8px;");
+				
+				$(".box-numero").removeClass("box-numero-alert");
+				$(".champ-nom-utilisateur").removeClass("champ-nom-utilisateur-alert");
+				$(".titre-numero").removeClass("titre-numero-alert");
+				$(".titre-numero").html(var_texte["msg_nom"]);
+				
+				$(".connexion-bas").css("opacity", "0");
+			});
+			
+			$(".champ-nom-utilisateur").focusout(function(){
+				if($(".champ-nom-utilisateur").val() == "")
+				{
+					$(".box-numero").addClass("box-numero-alert");
+					$(".champ-nom-utilisateur").addClass("champ-nom-utilisateur-alert");
+					$(".titre-numero").addClass("titre-numero-alert");
+					$(".titre-numero").html(var_texte["msg_nom"] + '<i style="margin-left: 4px" class="fa fa-exclamation-circle"></i>');
+				}
+				else
+				{
+					$(".box-numero").removeClass("box-numero-alert");
+					$(".champ-nom-utilisateur").removeClass("champ-nom-utilisateur-alert");
+					$(".titre-numero").removeClass("titre-numero-alert");
+					$(".titre-numero").html(var_texte["msg_nom"]);
+					
+					var $l = $(".champ-nom-utilisateur").val();
+					$pi = $l.split("");
+					if($l.length >= 4)
+					{
+						$(".btn-conn").addClass("btn-conn-active");
+					}
+					else
+					{
+						$(".btn-conn").removeClass("btn-conn-active");
+					}
+				}
+				$(".connexion-bas").css("opacity", "1");
+			});
+			
+			var $touche = 0;
+			$(".champ-nom-utilisateur").keyup(function(e){
+				var code = (e.keyCode ? e.keyCode : e.which);
+				var $l = $(".champ-nom-utilisateur").val();
+				$l = $l.replace(/\s/g,"");
+
+				if((code != 40) && (code != 38))
+				{
+					$pi = $l.split("");
+					if($l.length >= 4)
+					{
+						$(".btn-conn").addClass("btn-conn-active");
+					}
+					else
+					{
+						$(".btn-conn").removeClass("btn-conn-active");
+					}
+				}
+
+				
+			});
+			
+			$('.btn-conn').click(function(){
+				if($('.btn-conn').hasClass("btn-conn-active"))
+				{
+					$("#wait").show();
+					$.ajax({
+						method: "POST",
+						url: SERVER_API + "dev/check_internet_connexion/",
+						data: { id: 'pagespro' }
+					})
+					.done(function( msg ) 
+					{
+						if(msg == "OK")
+						{
+							localStorage['internet'] = '1';
+							$("#wait").show();
+							var $phone 	= localStorage['numero'];
+							var $photo 	= $("#img_user_base64").val();
+							var $nom 	= $("#nom_user").val();
+							
+							try {
+								var $phone_uuid 	= device.uuid;
+								var $phone_serie 	= device.serial;
+								var $phone_type 	= device.platform;
+								var $phone_marque 	= device.manufacturer;
+								var $phone_model 	= device.model;
+							}
+							catch(err) {
+								console.log("Erreur device : " + err);
+							}
+							finally {
+								var $phone_uuid 	= "000";
+								var $phone_serie 	= "no";
+								var $phone_type 	= "web";
+								var $phone_marque 	= "no";
+								var $phone_model 	= "no";
+							}
+							
+							$.ajax({
+								method: "POST",
+								url: SERVER_API + "mobile/add_n_edit_user/",
+								data: { numero: $phone, photo : $photo, nom : $nom, phone_uuid : $phone_uuid, phone_serie : $phone_serie, phone_type : $phone_type, phone_marque : $phone_marque, phone_model : $phone_model }
+							})
+							.done(function( msg ) {
+								
+								console.log(msg);
+								$("#wait").hide();
+								
+							});
+							
+						}
+						else
+						{
+							$("#wait").hide();
+							localStorage['internet'] = '0';
+							OpenModalURL("no-connexion.html");
+						}
+					})
+					.fail(function (jqXHR, textStatus, errorThrown) 
+					{ 
+						$("#wait").hide();
+						localStorage['internet'] = '0';
+						OpenModalURL("no-connexion.html");
+					});
+					
+				}
+			});
+			
+			function readURL(inpute, imaj) {
+				if (inpute.files && inpute.files[0]) {
+					var reader = new FileReader();
+					
+					reader.onload = function(e) {
+						$(imaj).attr('src', e.target.result);
+						$("#img_user_base64").val(e.target.result);
+					}
+					
+					reader.readAsDataURL(inpute.files[0]);
+				}
+			}
+			$("#img_user").change(function() {
+				$("#img_preview").addClass("image_user_preview_active");
+				readURL(this, "#img_preview");
+			});
 			
 			//Vérification du compte utilisateur
 			server = JSON.parse(localStorage["server"]);
