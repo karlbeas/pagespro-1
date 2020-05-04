@@ -333,14 +333,7 @@
 		<script src="assets/lang/lang_fr.js"></script>
 		<script>
 		
-			document.addEventListener("deviceready", onDeviceReady, false);
-			function onDeviceReady() {
-				localStorage['device_uuid'] 		= device.uuid;
-				localStorage['device_serial'] 		= device.serial;
-				localStorage['device_platform'] 	= device.platform;
-				localStorage['device_manufacturer']	= device.manufacturer;
-				localStorage['device_model']		= device.model;
-			}
+			
 
 			var lang = localStorage["lang"];
 			var var_texte = '';
@@ -443,22 +436,21 @@
 							var $photo 	= $("#img_user_base64").val();
 							var $nom 	= $("#nom_user").val();
 							
+							var $phone_uuid 	= "000";
+							var $phone_serie 	= "no";
+							var $phone_type 	= "web";
+							var $phone_marque 	= "no";
+							var $phone_model 	= "no";
+							
 							try {
-								var $phone_uuid 	= localStorage['device_uuid'];
-								var $phone_serie 	= localStorage['device_serial'];
-								var $phone_type 	= localStorage['device_platform'];
-								var $phone_marque 	= localStorage['device_manufacturer'];
-								var $phone_model 	= localStorage['device_model'];
+								$phone_uuid 	= localStorage['device_uuid'];
+								$phone_serie 	= localStorage['device_serial'];
+								$phone_type 	= localStorage['device_platform'];
+								$phone_marque 	= localStorage['device_manufacturer'];
+								$phone_model 	= localStorage['device_model'];
 							}
 							catch(err) {
 								alert("Erreur device : " + err);
-							}
-							finally {
-								var $phone_uuid 	= "000";
-								var $phone_serie 	= "no";
-								var $phone_type 	= "web";
-								var $phone_marque 	= "no";
-								var $phone_model 	= "no";
 							}
 							
 							$.ajax({
