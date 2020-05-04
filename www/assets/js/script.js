@@ -44,14 +44,26 @@ function TestConnexion()
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    StatusBar.hide();
-	alert(device.uuid);
+    	StatusBar.hide();
+	navigator.notification.alert(
+		    device.uuid,  // message
+		    alertDismissed,         // callback
+		    'Game Over',            // title
+		    'Done'                  // buttonName
+		);
+	
 	localStorage['device_uuid'] 		= device.uuid;
 	localStorage['device_serial'] 		= device.serial;
 	localStorage['device_platform'] 	= device.platform;
 	localStorage['device_manufacturer']	= device.manufacturer;
 	localStorage['device_model']		= device.model;
 }
+
+function alertDismissed() {
+    // do something
+}
+
+
 
 function base64(file, callback){
 	var coolFile = {};
