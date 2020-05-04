@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <!-- meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;" -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:* gap://* tel:* 'unsafe-inline' 'unsafe-eval' https://pagespro.cm; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -52,6 +52,17 @@
 		<script src="assets/js/script.js"></script>
 		<script>
 			// Teste Pour le tutoriel
+			function onLoad() {
+				document.addEventListener("deviceready", onDeviceReady, false);
+			}
+
+			// PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+			//
+			function onDeviceReady() {
+				// Now safe to use the PhoneGap API
+				alert();
+			}
+			
 			var userLang = navigator.language || navigator.userLanguage;
 			localStorage["lang"] = userLang;
 			
