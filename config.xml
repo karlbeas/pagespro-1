@@ -48,8 +48,6 @@
         </config-file>
     </platform>
     <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
-    <engine name="ios" spec="^4.5.5" />
-    <engine name="android" spec="^7.1.4" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.3" />
     <plugin name="cordova-plugin-device" spec="^2.0.3" />
     <plugin name="cordova-plugin-file" spec="^6.0.2" />
@@ -61,4 +59,6 @@
     </plugin>
     <plugin name="cordova-plugin-media-capture" spec="^3.0.3" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.2" />
+    <engine name="ios" spec="^4.5.5" />
+    <engine name="android" spec="^7.1.4" />
 </widget>
