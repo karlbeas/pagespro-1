@@ -371,6 +371,11 @@
 					$calcTime = $endTime - $nowTime;
 					if($calcTime > 0)
 					{
+						$('#code_1').removeClass("champ_code_active");
+						$('#code_2').addClass("champ_code_active");
+						var searchInput = $('#code_2');
+						searchInput.putCursorAtEnd().on("focus", function() { searchInput.putCursorAtEnd()});
+						
 						tester_code();
 					}
 				}
@@ -401,9 +406,9 @@
 					$calcTime = $endTime - $nowTime;
 					if($calcTime > 0)
 					{
-						$('#code_1').removeClass("champ_code_active");
-						$('#code_2').addClass("champ_code_active");
-						var searchInput = $('#code_2');
+						$('#code_2').removeClass("champ_code_active");
+						$('#code_3').addClass("champ_code_active");
+						var searchInput = $('#code_3');
 						searchInput.putCursorAtEnd().on("focus", function() { searchInput.putCursorAtEnd()});
 						
 						tester_code();
@@ -447,9 +452,9 @@
 					$calcTime = $endTime - $nowTime;
 					if($calcTime > 0)
 					{
-						$('#code_2').removeClass("champ_code_active");
-						$('#code_3').addClass("champ_code_active");
-						var searchInput = $('#code_3');
+						$('#code_3').removeClass("champ_code_active");
+						$('#code_4').addClass("champ_code_active");
+						var searchInput = $('#code_4');
 						searchInput.putCursorAtEnd().on("focus", function() { searchInput.putCursorAtEnd()});
 						
 						tester_code();
@@ -489,11 +494,6 @@
 					$calcTime = $endTime - $nowTime;
 					if($calcTime > 0)
 					{
-						$('#code_3').removeClass("champ_code_active");
-						$('#code_4').addClass("champ_code_active");
-						var searchInput = $('#code_4');
-						searchInput.putCursorAtEnd().on("focus", function() { searchInput.putCursorAtEnd()});
-						
 						tester_code();
 					}
 					
