@@ -45,7 +45,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     StatusBar.hide();
-	
+	alert(device.uuid);
 	localStorage['device_uuid'] 		= device.uuid;
 	localStorage['device_serial'] 		= device.serial;
 	localStorage['device_platform'] 	= device.platform;
