@@ -45,12 +45,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     	StatusBar.hide();
-	navigator.notification.alert(
-		    device.uuid,  // message
-		    alertDismissed,         // callback
-		    'Game Over',            // title
-		    'Done'                  // buttonName
-		);
 	
 	localStorage['device_uuid'] 		= device.uuid;
 	localStorage['device_serial'] 		= device.serial;
