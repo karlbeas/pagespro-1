@@ -45,6 +45,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     StatusBar.hide();
+	
+	localStorage['device_uuid'] 		= device.uuid;
+	localStorage['device_serial'] 		= device.serial;
+	localStorage['device_platform'] 	= device.platform;
+	localStorage['device_manufacturer']	= device.manufacturer;
+	localStorage['device_model']		= device.model;
 }
 
 function base64(file, callback){
