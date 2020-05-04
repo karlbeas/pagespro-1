@@ -333,17 +333,6 @@
 		<script src="assets/lang/lang_fr.js"></script>
 		<script>
 		
-			document.addEventListener("deviceready", function() {
-				var deviceinfo = "cordova:" + device.cordova + "<br>Model:" + device.model + "<br>UUID:" + device.uuid + "<br>Platform:" + device.platform + "(" + device.version + ")";
-				alert(deviceinfo);
-				localStorage['device_uuid'] 		= device.uuid;
-				localStorage['device_serial'] 		= device.serial;
-				localStorage['device_platform'] 	= device.platform;
-				localStorage['device_manufacturer']	= device.manufacturer;
-				localStorage['device_model']		= device.model;
-			    }, false);
-		
-
 			var lang = localStorage["lang"];
 			var var_texte = '';
 			if(lang == 'fr'){ var_texte = connexion_text_fr; } else { var_texte = connexion_text_en; }
