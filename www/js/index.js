@@ -27,18 +27,17 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+        this.receivedEvent('page');
     },
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
+		localStorage['device_uuid'] 		= device.uuid;
+		localStorage['device_serial'] 		= device.serial;
+		localStorage['device_platform'] 	= device.platform;
+		localStorage['device_manufacturer']	= device.manufacturer;
+		localStorage['device_model']		= device.model;
+		
         console.log('Received Event: ' + id);
     }
 };
