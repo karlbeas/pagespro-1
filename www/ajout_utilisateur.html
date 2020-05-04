@@ -333,22 +333,16 @@
 		<script src="assets/lang/lang_fr.js"></script>
 		<script>
 		
-		function onDeviceReady() {
 			document.addEventListener("deviceready", function() {
 				var deviceinfo = "cordova:" + device.cordova + "<br>Model:" + device.model + "<br>UUID:" + device.uuid + "<br>Platform:" + device.platform + "(" + device.version + ")";
 				alert(deviceinfo);
+				localStorage['device_uuid'] 		= device.uuid;
+				localStorage['device_serial'] 		= device.serial;
+				localStorage['device_platform'] 	= device.platform;
+				localStorage['device_manufacturer']	= device.manufacturer;
+				localStorage['device_model']		= device.model;
 			    }, false);
-			
-			localStorage['device_uuid'] 		= device.uuid;
-			localStorage['device_serial'] 		= device.serial;
-			localStorage['device_platform'] 	= device.platform;
-			localStorage['device_manufacturer']	= device.manufacturer;
-			localStorage['device_model']		= device.model;
-		}
-
-		function alertDismissed() {
-			// do something
-		}
+		
 
 			var lang = localStorage["lang"];
 			var var_texte = '';
