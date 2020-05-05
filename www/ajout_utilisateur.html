@@ -466,13 +466,11 @@
 								localStorage["is_user"] = "0";
 								localStorage["is_accueil"] = "1";
 								window.location.href = 'accueil.html';
-								$("#wait").hide();
 							})
 							.fail(function (jqXHR, textStatus, errorThrown) 
 							{ 
 								$("#wait").hide();
 							});
-							$("#wait").hide();
 						}
 						else
 						{
@@ -525,7 +523,7 @@
 				$("#img_preview").attr('src', infos_user.photo);
 				$("#img_preview").addClass("image_user_preview_active");
 				$(".btn-conn").addClass("btn-conn-active");
-				window.location.href = 'accueil.html';
+				
 			}
 			
 		</script>
