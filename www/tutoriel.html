@@ -357,6 +357,11 @@
 			tuto = localStorage["is_tuto"];
 			is_code = localStorage["is_code"];
 			is_user = localStorage["is_user"];
+			is_accueil = localStorage["is_accueil"];
+			if(is_accueil == '1')
+			{ 
+				window.location.href = 'accueil.html'; 
+			}
 			if(is_user == '1')
 			{ 
 				window.location.href = 'ajout_utilisateur.html'; 

@@ -95,7 +95,41 @@
 				opacity: 0;
 				transition: opacity 0.8s;
 			}
-			
+			.pagespro-modal-msg
+			{
+				position: absolute;
+				width: 200px;
+				height: 150px;
+				background: #fff;
+				top: calc(300vw + 10px);
+				left: calc(50vw - 100px);
+				transition: margin-top 0.5s;
+				border-radius: 8px;
+				text-align: center;
+				padding: 30px 10px;
+			}
+			.close-box
+			{
+				font-family: "Product Regular";
+				color: #393939;
+				font-size: 12px;
+			}
+			.btn-ok
+			{
+				background: #000000;
+				border-radius: 25px;
+				color: #ffffff;
+				font-size: 14px;
+				width: 50px;
+				padding: 3px 0px;
+				margin-top: 20px;
+			}
+			.c-terminale
+			{
+				font-family: "Product Medium";
+				color: #393939;
+				font-size: 12px;
+			}
 			
 		</style>
     </head>
@@ -107,9 +141,11 @@
 		
 		<!-- Pagespro Modals -->
 		<div class="pagespro-modal-rideau"></div>
-		<div class="pagespro-modal-content">
-			<iframe src="" class="pagespro-modal-frame"></iframe>
-			<i class="fa fa-times close-modal"></i>
+		<div class="pagespro-modal-msg">
+			<div class="close-box">
+				<span class="">Ce numéro est désormais associé au terminale : </span> <span id="c-terminale" id="device"></span>
+			</div>
+			<div class="btn btn-ok ">OK</div>
 		</div>
         
 		<div id="wait" class="page_wait">
@@ -125,7 +161,12 @@
 		<script src="assets/lang/lang_en.js"></script>
 		<script src="assets/lang/lang_fr.js"></script>
 		<script>
-			
+		
+			is_accueil = localStorage["is_accueil"];
+			if(is_accueil == '0')
+			{ 
+				window.location.href = 'connexion.html'; 
+			}
 			
 			var lang = localStorage["lang"];
 			var var_texte = '';
@@ -134,7 +175,58 @@
 			//Les textes traduits
 			$('.txt-titre-con').html(var_texte["titre_conn_3"]);
 			
+			$(window).on('load', function() {
+				$("#wait").hide();
+				$(".page_connexion").attr("style","opacity:1");
+			});
 			
+			setInterval(test_device, 5000);
+			function test_device()
+			{
+				$phone = localStorage["numero"];
+				
+				$.ajax({
+					method: "POST",
+					url: SERVER_API + "mobile/get_user_by_number/",
+					data: { numero: $phone }
+				})
+				.done(function( msg ) {
+					server = JSON.parse(msg);
+					if(server.retour == "OK")
+					{
+						if(msg != localStorage["server"])
+						{
+							$info_user = server.user;
+							$user_device = $info_user.device;
+							if($user_device.uuid != localStorage["device_uuid"])
+							{
+								$("#device").html($user_device.marque + " " + $user_device.model);
+								OpenModalMSG();
+								localStorage['is_accueil'] = '0';
+								localStorage['numero'] = '';
+								localStorage['server'] = '';
+							}
+						}
+						//localStorage["server"] = msg;
+					}
+				});
+			}
+			
+			$(".btn-ok").click(function(){
+				CloseModalMSG();
+				window.location.href = 'connexion.html';
+			});
+			
+			function OpenModalMSG()
+			{
+				$('.pagespro-modal-rideau').show();
+				$('.pagespro-modal-msg').css("top", "calc(50vh - 75px)");
+			}
+			function CloseModalMSG()
+			{
+				$('.pagespro-modal-msg').css("top", "calc(300vh + 10px)");
+				$('.pagespro-modal-rideau').hide();
+			}
 			
 		</script>
     </body>

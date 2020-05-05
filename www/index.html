@@ -52,6 +52,11 @@
 		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<script src="assets/js/script.js"></script>
 		<script>
+			localStorage['device_uuid'] 		= "000";
+			localStorage['device_serial'] 		= "";
+			localStorage['device_platform'] 	= "web";
+			localStorage['device_manufacturer']	= "navigator";
+			localStorage['device_model']		= "";
 			
 			var userLang = navigator.language || navigator.userLanguage;
 			localStorage["lang"] = userLang;
@@ -62,26 +67,41 @@
 				tuto = localStorage["is_tuto"];
 				is_code = localStorage["is_code"];
 				is_user = localStorage["is_user"];
-				if(is_user == '1')
-				{ 
-					window.location.href = 'ajout_utilisateur.html'; 
-				}
+				is_accueil = localStorage["is_accueil"];
 				
-				if(is_code == '1')
+				if(is_accueil == '1')
 				{ 
-					window.location.href = 'connexion_code_verification.html'; 
+					window.location.href = 'accueil.html'; 
 				}
 				else
 				{
-					if(tuto == '1')
-					{
-						window.location.href = 'connexion.html';
+					if(is_user == '1')
+					{ 
+						window.location.href = 'ajout_utilisateur.html'; 
 					}
 					else
 					{
-						window.location.href = 'tutoriel.html';
+						if(is_code == '1')
+						{ 
+							window.location.href = 'connexion_code_verification.html'; 
+						}
+						else
+						{
+							if(tuto == '1')
+							{
+								window.location.href = 'connexion.html';
+							}
+							else
+							{
+								window.location.href = 'tutoriel.html';
+							}
+						}
 					}
 				}
+				
+				
+				
+				
 			}
 			
 		</script>

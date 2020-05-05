@@ -448,7 +448,7 @@
 								$phone_model 	= localStorage['device_model'];
 							}
 							catch(err) {
-								alert("Erreur device : " + err);
+								console.log("Erreur device : " + err);
 							}
 							
 							$.ajax({
@@ -457,12 +457,22 @@
 								data: { numero: $phone, photo : $photo, nom : $nom, phone_uuid : $phone_uuid, phone_serie : $phone_serie, phone_type : $phone_type, phone_marque : $phone_marque, phone_model : $phone_model }
 							})
 							.done(function( msg ) {
-								
 								console.log(msg);
+								server = JSON.parse(msg);
+								if(server.retour == "OK")
+								{
+									localStorage["server"] = msg;
+								}
+								localStorage["is_user"] = "0";
+								localStorage["is_accueil"] = "1";
+								window.location.href = 'accueil.html';
 								$("#wait").hide();
-								
+							})
+							.fail(function (jqXHR, textStatus, errorThrown) 
+							{ 
+								$("#wait").hide();
 							});
-							
+							$("#wait").hide();
 						}
 						else
 						{
@@ -498,11 +508,24 @@
 				readURL(this, "#img_preview");
 			});
 			
+			is_accueil = localStorage["is_accueil"];
+			if(is_accueil == '1')
+			{ 
+				window.location.href = 'accueil.html'; 
+			}
 			//Vérification du compte utilisateur
 			server = JSON.parse(localStorage["server"]);
 			if(server.retour == "OK")
 			{
-				window.location.href = 'accueil.html';
+				user = server.user;
+				infos_user = user.infos;
+				device_user = user.device;
+				$("#nom_user").val(infos_user.nom);
+				$("#img_user_base64").val(infos_user.photo);
+				$("#img_preview").attr('src', infos_user.photo);
+				$("#img_preview").addClass("image_user_preview_active");
+				$(".btn-conn").addClass("btn-conn-active");
+				//window.location.href = 'accueil.html';
 			}
 			
 		</script>
