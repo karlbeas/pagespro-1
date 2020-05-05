@@ -143,7 +143,7 @@
 		<div class="pagespro-modal-rideau"></div>
 		<div class="pagespro-modal-msg">
 			<div class="close-box">
-				<span class="">Ce numéro est désormais associé au terminale : </span> <span id="c-terminale" id="device"></span>
+				<span class="">Ce numéro est désormais associé au terminale : </span> <span class="c-terminale" id="device"></span>
 			</div>
 			<div class="btn btn-ok ">OK</div>
 		</div>
@@ -198,9 +198,9 @@
 						{
 							$info_user = server.user;
 							$user_device = $info_user.device;
+							$("#device").html($user_device.marque + " " + $user_device.model);
 							if($user_device.uuid != localStorage["device_uuid"])
 							{
-								$("#device").html($user_device.marque + " " + $user_device.model);
 								OpenModalMSG();
 								localStorage['is_accueil'] = '0';
 								localStorage['numero'] = '';
