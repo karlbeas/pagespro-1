@@ -359,15 +359,11 @@
 			$('.txt-rechercher').attr("placeholder",var_texte["recherchez"]);
 			$('.champ-recherche').attr("placeholder",var_texte["recherchez"]);
 			
-			$("#wait").hide();
-			$(".page_accueil").css("opacity","1");
-			/*
 			$(window).on('load', function() {
-				alert("VRAI 2");
-			
-				
+				$("#wait").hide();
+				$(".page_accueil").css("opacity","1");
 			});
-			*/
+			
 			setInterval(test_device, 5000);
 			function test_device()
 			{

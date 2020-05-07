@@ -430,7 +430,6 @@
 								data: { numero: $phone, photo : $photo, nom : $nom, phone_uuid : $phone_uuid, phone_serie : $phone_serie, phone_type : $phone_type, phone_marque : $phone_marque, phone_model : $phone_model }
 							})
 							.done(function( msg ) {
-								$("#wait").hide();
 								server = JSON.parse(msg);
 								if(server.retour == "OK")
 								{
