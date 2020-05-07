@@ -427,20 +427,19 @@
 							$.ajax({
 								method: "POST",
 								url: SERVER_API + "mobile/add_n_edit_user_2/",
-								data: { numero: $phone }
+								data: { numero: $phone, photo : $photo, nom : $nom, phone_uuid : $phone_uuid, phone_serie : $phone_serie, phone_type : $phone_type, phone_marque : $phone_marque, phone_model : $phone_model }
 							})
 							.done(function( msg ) {
-								/*
-								console.log(msg);
+								$("#wait").hide();
 								server = JSON.parse(msg);
 								if(server.retour == "OK")
 								{
 									localStorage["server"] = msg;
 								}
-								*/
-								localStorage["is_user"] = "0";
-								localStorage["is_accueil"] = "1";
-								window.location.href = 'accueil.html';
+								alert(msg);
+								//localStorage["is_user"] = "0";
+								//localStorage["is_accueil"] = "1";
+								//window.location.href = 'accueil.html';
 							})
 							.fail(function (jqXHR, textStatus, errorThrown) 
 							{ 
