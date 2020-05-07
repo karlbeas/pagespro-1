@@ -384,7 +384,7 @@
 			<div class="connexion-box-numero">
 				<div class="box-numero-pays">
 					<div class="titre-pays txt-titre-pays">Pays/Etat</div>
-					<div class="titre-conn-pays"><img src="assets/flags/cameroun.png" /> Cameroun (+237)</div>
+					<div class="titre-conn-pays"><img src="assets/flags/cameroun.png" /> <span class="txt-cameroun">Cameroun (+237)</span></div>
 				</div>
 				<div class="box-numero">
 					<div class="titre-numero txt-titre-numero">Numéro de téléphone</div>
@@ -452,6 +452,7 @@
 			$('.txt-content-conn').html(var_texte["msg_conn"]);
 			$('.txt-conn-bas').html(var_texte["msg_bas"]);
 			$('.txt-btn-continuer').html(var_texte["btn_continuer"]);
+			$('.txt-cameroun').html(var_texte["cameroun"]);
 			
 			$(window).on('load', function() {
 				$("#wait").hide();
