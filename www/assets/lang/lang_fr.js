@@ -18,6 +18,7 @@ var connexion_text_fr =
 				"msg_conn"				:	"Nous vous envoyons un SMS pour confirmer votre numéro de téléphone. En cas d'absence de compte un compte est directement créé.", 
 				"msg_bas"				:	"En s'inscrivant ou en se connectant, vous acceptez <span class='pp'>la politique de confidentialité</span> et <span class='cgu'>les conditions générales d'utilisation</span> des services pagespro.", 
 				"btn_continuer"			:	"Continuez", 
+				"cameroun"				:	"Cameroun (+237)", 
 				"sms_code"				:	"Votre code de verification pagespro est", 
 				"msg_numero_nok"		:	"Numéro pas correcte", 
 				"titre_conn_2"			:	"Confirmez votre numéro", 
@@ -33,4 +34,14 @@ var noconnexion_text_fr =
 			{ 
 				"titre"					:	"Pas de connexion internet !", 
 				"contenu"				:	"Merci de vérifier votre connexion internet", 
+			};
+			
+var accueil_text_fr = 
+			{ 
+				"accueil"				:	"Accueil", 
+				"carte"					:	"Carte", 
+				"historique"			:	"Historique", 
+				"pages"					:	"Mes pages", 
+				"plus"					:	"Plus", 
+				"recherchez"			:	"Que recherchez-vous?", 
 			};
