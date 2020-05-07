@@ -423,19 +423,21 @@
 							catch(err) {
 								console.log("Erreur device : " + err);
 							}
-							
+							//numero: $phone, photo : $photo, nom : $nom, phone_uuid : $phone_uuid, phone_serie : $phone_serie, phone_type : $phone_type, phone_marque : $phone_marque, phone_model : $phone_model
 							$.ajax({
 								method: "POST",
 								url: SERVER_API + "mobile/add_n_edit_user_2/",
-								data: { numero: $phone, photo : $photo, nom : $nom }
+								data: { numero: $phone }
 							})
 							.done(function( msg ) {
+								/*
 								console.log(msg);
 								server = JSON.parse(msg);
 								if(server.retour == "OK")
 								{
 									localStorage["server"] = msg;
 								}
+								*/
 								localStorage["is_user"] = "0";
 								localStorage["is_accueil"] = "1";
 								window.location.href = 'accueil.html';
