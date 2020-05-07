@@ -265,7 +265,7 @@
 		
 		<div class="page_accueil">
 			<div class="page page-recherche page-active">
-				<!--
+				
 				<div class="accueil-haut-recherche">
 					<i class="fa fa-arrow-left accueil-btn-retour"></i>
 					<input type="text" class="champ-recherche txt-rechercher" id="champ-recherche" placeholder="Que recherchez-vous?" />
@@ -279,7 +279,7 @@
 						<div class="loupe-accueil"><i class="fa fa-search"></i></div>
 					</div>
 				</div>
-				-->
+				
 			</div>
 			<div class="page page-cartes">
 				Cartes
@@ -359,13 +359,15 @@
 			$('.txt-rechercher').attr("placeholder",var_texte["recherchez"]);
 			$('.champ-recherche').attr("placeholder",var_texte["recherchez"]);
 			
+			$("#wait").hide();
+			$(".page_accueil").css("opacity","1");
+			/*
 			$(window).on('load', function() {
 				alert("VRAI 2");
 			
-				$("#wait").hide();
-				$(".page_accueil").css("opacity","1");
+				
 			});
-			
+			*/
 			setInterval(test_device, 5000);
 			function test_device()
 			{
@@ -413,7 +415,7 @@
 				$('.pagespro-modal-msg').css("top", "calc(300vh + 10px)");
 				$('.pagespro-modal-rideau').hide();
 			}
-			/*
+			
 			$(".m-home").click(function(){
 				$(".page").removeClass("page-active");
 				$(".text-menu").removeClass("text-active");
@@ -500,7 +502,7 @@
 				$('#champ-recherche').val("");
 				$('#champ-recherche').focus();
 			});
-			*/
+			
 		</script>
     </body>
 </html>
