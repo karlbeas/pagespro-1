@@ -436,10 +436,10 @@
 								{
 									localStorage["server"] = msg;
 								}
+								localStorage["is_user"] = "0";
+								localStorage["is_accueil"] = "1";
 								alert(msg);
-								//localStorage["is_user"] = "0";
-								//localStorage["is_accueil"] = "1";
-								//window.location.href = 'accueil.html';
+								window.location.href = 'accueil.html';
 							})
 							.fail(function (jqXHR, textStatus, errorThrown) 
 							{ 
