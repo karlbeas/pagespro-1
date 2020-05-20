@@ -14,7 +14,7 @@
         <title>Pagespro</title>
 		<style>
 			/* Android */
-			/*
+			
 			body
 			{
 				position: fixed;
@@ -34,15 +34,351 @@
 				overflow: hidden;
 				background: #ffffff;
 				text-align: left;
-				padding-left: 20px;
-				padding-right: 20px;
-				padding-top: 50px;
 				opacity: 0;
 				transition: opacity 0.8s;
 			}
+			.pagespro-modal-msg
+			{
+				position: absolute;
+				width: 200px;
+				height: 150px;
+				background: #fff;
+				top: calc(300vw + 10px);
+				left: calc(50vw - 100px);
+				transition: margin-top 0.5s;
+				border-radius: 8px;
+				text-align: center;
+				padding: 30px 10px;
+			}
+			.close-box
+			{
+				font-family: "Product Regular";
+				color: #393939;
+				font-size: 12px;
+			}
+			.btn-ok
+			{
+				background: #000000;
+				border-radius: 25px;
+				color: #ffffff;
+				font-size: 14px;
+				width: 50px;
+				padding: 3px 0px;
+				margin-top: 20px;
+			}
+			.c-terminale
+			{
+				font-family: "Product Medium";
+				color: #393939;
+				font-size: 12px;
+			}
+			.menu-app
+			{
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				width: 100%;
+				height: 50px;
+				background: #ffffff;
+				box-shadow: 0px -1px 3px 0px rgba(153,153,153,0.3);
+				transition: bottom 0.8s;
+			}
+			.menu
+			{
+				position: absolute;
+				height: 50px;
+				width: 20%;
+				text-align: center;
+				padding-top: 5px;
+			}
+			.menu img
+			{
+				height: 25px;
+				width: 25px;
+			}
+			.text-menu
+			{
+				font-family: "Cereal Medium";
+				font-size: 8px;
+				color: #9c9c9c;
+			}
+			.text-active
+			{
+				color: #3c3c3c;
+			}
+			.m-home
+			{
+				bottom: 0px;
+				left: 0px;
+			}
+			.m-carte
+			{
+				bottom: 0px;
+				left: 20%;
+			}
+			.m-historique
+			{
+				bottom: 0px;
+				left: 40%;
+			}
+			.m-pages
+			{
+				bottom: 0px;
+				left: 60%;
+			}
+			.m-plus
+			{
+				bottom: 0px;
+				left: 80%;
+			}
+			
+			.page
+			{
+				position: absolute;
+				top: 0px;
+				left: 100vw;
+				width: 100vw;
+				height: calc(100vh - 50px);
+				transition: left 0.3s;
+				background: #fff;
+			}
+			.page-active
+			{
+				left: 0px;
+				transition: left 0.3s;
+			}
+			
+			.accueil-index
+			{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: calc(100vh - 50px);
+				background: #fff;
+				text-align: center;
+				vertical-align: middle;
+				transition: opacity 0.3s;
+			}
+			.accueil-index-logo
+			{
+				margin-top: calc(50vh - 100px);
+			}
+			.accueil-index-logo img
+			{
+				width: 50px;
+				height: 50px;
+				margin-bottom: 20px;
+			}
+			.accueil-index-recherche
+			{
+				margin: 0 auto;
+				width: 80%;
+				min-width: 280px;
+				border: 1px solid #dfe1e5;
+				border-radius: 25px;
+				height: 44px;
+				text-align: center;
+				padding-top: 4px;
+			}
+			.loupe-accueil
+			{
+				border: none;
+				width: 34px;
+				height: 34px;
+				background: #e5c304;
+				border-radius: 50%;
+				color: #393939;
+				font-family: 24px;
+				text-align: center;
+				display: inline-block;
+				padding-top: 2px;
+			}
+			.accueil-index-champ
+			{
+				width: calc(100% - 56px);
+				margin-left: 10px;
+				font-family: "Product Regular";
+				font-size: 16px;
+				border: none;
+				color: #999;
+				margin-top: 2px;
+			}
+			
+			.accueil-haut-recherche
+			{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 60px;
+				background: #fff;
+				text-align: center;
+				opacity: 0;
+				border-bottom: 1px solid #dfe1e5;
+				padding: 15px;
+				font-size: 18px;
+				transition: opacity 0.3s;
+			}
+			.accueil-haut-recherche input
+			{
+				width: calc(100% - 50px);
+				padding-left: 10px;
+				font-size: 16px;
+				border: none;
+			}
+			.accueil-haut-recherche .fa-arrow-left
+			{
+				color: #9c9c9c;
+			}
+			.accueil-haut-recherche .fa-times-circle
+			{
+				color: #333333;
+			}
+			
+			.recherche-vide-historique
+			{
+				position: absolute;
+				top: 60px;
+				left: 0px;
+				height: calc(100vh - 110px);
+				width: 100%;
+				overflow: hidden;
+				padding: 10px 20px;
+			}
+			.titre-recherche-recentes
+			{
+				color: #999;
+				font-size: 12px;
+				text-align: left;
+			}
+			.list-recherches-recentes
+			{
+				padding: 10px 0px;
+			}
+			.list-recherches-recentes
+			{
+				font-size: 16px;
+				color: #303030;
+				text-align: left;
+			}
+			.elt-recent
+			{
+				margin-top: 10px;
+				color: #636363;
+			}
+			.elt-recent i
+			{
+				font-size: 15px;
+				margin-right: 10px;
+				color: #303030;
+			}
+			
+			.recherche-liste-autocomplete
+			{
+				position: absolute;
+				top: 60px;
+				left: 0px;
+				height: calc(100vh - 110px);
+				width: 100%;
+				overflow: hidden;
+				padding: 10px 20px;
+			}
+			.list-recherches-trouvees
+			{
+				font-size: 16px;
+				color: #303030;
+				text-align: left;
+			}
+			.auto-search-c
+			{
+				margin-top: 10px;
+				color: #636363;
+			}
+			.auto-search-c i
+			{
+				font-size: 15px;
+				margin-right: 10px;
+				color: #303030;
+			}
+			
+			.accueil-resultat-recherche
+			{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 60px;
+				background: #fff;
+				text-align: center;
+				opacity: 0;
+				font-size: 18px;
+				transition: opacity 0.3s;
+			}
+			.bloc-champ-resultat
+			{
+				margin: 15px auto;
+				width: calc(100vw - 30px);
+				height: 40px;
+				border: 1px solid #cfcfcf;
+				border-radius: 25px;
+				text-align: center;
+				padding-top: 3px;
+			}
+			.bloc-champ-resultat input
+			{
+				width: calc(100% - 80px);
+				padding-left: 10px;
+				font-size: 16px;
+				border: none;
+				color: #333333;
+			}
+			.bloc-champ-resultat img
+			{
+				width: 25px;
+				height: 25px;
+			}
+			.bloc-champ-resultat i
+			{
+				color: #cecece;
+			}
+			.resultat-contenu
+			{
+				position: absolute;
+				top: 60px;
+				left: 0px;
+				height: calc(100vh - 110px);
+				width: 100%;
+				overflow: hidden;
+			}
+			#page-serveur-recherche
+			{
+				width: 100%;
+				height: 100%;
+				border: none;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+			
+			.page_wait_iframe
+			{
+				position: absolute;
+				top: 100px;
+				left: 0px;
+				width: 100%;
+				height: calc(100vh - 150px);
+				background: #fff;
+			}
+			.page_wait_iframe img {
+				width: 50px;
+				height: 50px;
+				margin-top: calc(50vh - 100px);
+				margin-left: calc(50vw - 25px);
+			}
+			
 			
 			/* iOS */
-			
+			/*
 			body
 			{
 				position: fixed;
@@ -261,17 +597,59 @@
 			{
 				color: #333333;
 			}
+			*/
 		</style>
     </head>
     <body>
+	
+		<form id="pagesproForm" target="" method="post" action="" >
+			<input type="hidden" id="mot" name="mot" value=""/>
+			<input type="hidden" id="phone" name="phone" value=""/>
+			<input type="hidden" id="device_uuid" name="device_uuid" value=""/>
+			<input type="hidden" id="ville" name="ville" value=""/>
+			<input type="hidden" id="geo_lat" name="geo_lat" value=""/>
+			<input type="hidden" id="geo_lon" name="geo_lon" value=""/>
+			<input type="hidden" id="geo_address" name="geo_address" value=""/>
+			<input type="hidden" id="lang" name="lang" value=""/>
+		</form>
 		
 		<div class="page_accueil">
 			<div class="page page-recherche page-active">
+			
+				<div class="accueil-resultat-recherche">
+					<div class="bloc-champ-resultat">
+						<img class="logo-resultat" src="img/logo.png" />
+						<input type="text" class="champ-recherche-resultat txt-rechercher" id="champ-recherche-resultat" placeholder="Que recherchez-vous?" />
+						<i class="fa fa-search"></i>
+					</div>
+					<div class="resultat-contenu">
+						<iframe src="" id="page-serveur-recherche" name="page-serveur-recherche"></iframe>
+					</div>
+				</div>
 				
 				<div class="accueil-haut-recherche">
 					<i class="fa fa-arrow-left accueil-btn-retour"></i>
 					<input type="text" class="champ-recherche txt-rechercher" id="champ-recherche" placeholder="Que recherchez-vous?" />
 					<i class="fa fa-times-circle accueil-btn-efface"></i>
+					<div class="recherche-vide-historique">
+						<div class="titre-recherche-recentes txt-rrecentes">Recherches récentes</div>
+						<div class="list-recherches-recentes">
+						</div>
+					</div>
+					<div class="recherche-liste-autocomplete">
+						<div class="list-recherches-trouvees">
+							<a id="elt-1" class="ss_search" data-search=""><div id="s-elt-1" class="auto-search-c"></div></a>
+							<a id="elt-2" class="ss_search" data-search=""><div id="s-elt-2" class="auto-search-c"></div></a>
+							<a id="elt-3" class="ss_search" data-search=""><div id="s-elt-3" class="auto-search-c"></div></a>
+							<a id="elt-4" class="ss_search" data-search=""><div id="s-elt-4" class="auto-search-c"></div></a>
+							<a id="elt-5" class="ss_search" data-search=""><div id="s-elt-5" class="auto-search-c"></div></a>
+							<a id="elt-6" class="ss_search" data-search=""><div id="s-elt-6" class="auto-search-c"></div></a>
+							<a id="elt-7" class="ss_search" data-search=""><div id="s-elt-7" class="auto-search-c"></div></a>
+							<a id="elt-8" class="ss_search" data-search=""><div id="s-elt-8" class="auto-search-c"></div></a>
+							<a id="elt-9" class="ss_search" data-search=""><div id="s-elt-9" class="auto-search-c"></div></a>
+							<a id="elt-10" class="ss_search" data-search=""><div id="s-elt-10" class="auto-search-c"></div></a>
+						</div>
+					</div>
 				</div>
 				
 				<div class="accueil-index">
@@ -284,7 +662,8 @@
 				
 			</div>
 			<div class="page page-cartes">
-				Cartes
+				<div>Ville: <span id="ville"></span></div>
+				<div>Adresse: <span id="address"></span></div>
 			</div>
 			<div class="page page-historique">
 				Historique
@@ -294,6 +673,10 @@
 			</div>
 			<div class="page page-plus">
 				Plus
+			</div>
+			
+			<div id="wait_iframe" class="page_wait_iframe">
+				<img src="assets/img/wait.gif" />
 			</div>
 			
 			<div class="menu-app">
@@ -320,17 +703,24 @@
 			</div>
 		</div>
 		
+		
+		<div id="wait" class="page_wait">
+			<img src="assets/img/wait.gif" />
+		</div>
+		
 		<!-- Pagespro Modals -->
 		<div class="pagespro-modal-rideau"></div>
+		
+		<div class="pagespro-modal-content">
+			<iframe src="" class="pagespro-modal-frame"></iframe>
+			<div class="btn btn-reessayer txt-reessayer">Reessayer</div>
+		</div>
+		
 		<div class="pagespro-modal-msg">
 			<div class="close-box">
 				<span class="">Ce numéro est désormais associé au terminale : </span> <span class="c-terminale" id="device"></span>
 			</div>
 			<div class="btn btn-ok ">OK</div>
-		</div>
-        
-		<div id="wait" class="page_wait">
-			<img src="assets/img/wait.gif" />
 		</div>
 		
         <script type="text/javascript" src="cordova.js"></script>
@@ -339,6 +729,7 @@
 		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<script src="assets/js/jquery.bcSwipe.js"></script>
 		<script src="assets/js/script.js"></script>
+		<script src="assets/js/accueil.js"></script>
 		<script src="assets/lang/lang_en.js"></script>
 		<script src="assets/lang/lang_fr.js"></script>
 		<script>
@@ -350,7 +741,7 @@
 			
 			var lang = localStorage["lang"];
 			var var_texte = '';
-			if(lang == 'fr'){ var_texte = accueil_text_fr; } else { var_texte = accueil_text_en; }
+			if((lang == 'fr') || (lang == 'fr-FR') || (lang == 'fr-CM')){ var_texte = accueil_text_fr; } else { var_texte = accueil_text_en; }
 			
 			//Les textes traduits
 			$('.txt-accueil').html(var_texte["accueil"]);
@@ -360,17 +751,20 @@
 			$('.txt-plus').html(var_texte["plus"]);
 			$('.txt-rechercher').attr("placeholder",var_texte["recherchez"]);
 			$('.champ-recherche').attr("placeholder",var_texte["recherchez"]);
+			$('.txt-rrecentes').html(var_texte["rrecentes"]);
+			$('.txt-reessayer').html(var_texte["reessayer"]);
 			
 			$(window).on('load', function() {
 				$("#wait").hide();
 				$(".page_accueil").css("opacity","1");
+				//$(".accueil-index-champ").focus();
 			});
 			
-			setInterval(test_device, 5000);
+			var $phone = localStorage["numero"];
+			//setInterval(test_device, 5000);
 			function test_device()
 			{
-				$phone = localStorage["numero"];
-				
+				$("#wait_iframe").hide();
 				$.ajax({
 					method: "POST",
 					url: SERVER_API + "mobile/get_user_by_number/",
@@ -396,6 +790,7 @@
 						//localStorage["server"] = msg;
 					}
 				});
+				
 			}
 			
 			$(".btn-ok").click(function(){
@@ -415,6 +810,8 @@
 			}
 			
 			$(".m-home").click(function(){
+				test_device();
+			
 				$(".page").removeClass("page-active");
 				$(".text-menu").removeClass("text-active");
 				$(".m-carte img").attr("src", "assets/ico/off/i-cartes.png");
@@ -427,6 +824,8 @@
 				$(".page-recherche").addClass("page-active");
 			});
 			$(".m-carte").click(function(){
+				test_device();
+			
 				$(".page").removeClass("page-active");
 				$(".text-menu").removeClass("text-active");
 				$(".m-home img").attr("src", "assets/ico/off/i-recherche.png");
@@ -439,6 +838,8 @@
 				$(".page-cartes").addClass("page-active");
 			});
 			$(".m-historique").click(function(){
+				test_device();
+			
 				$(".page").removeClass("page-active");
 				$(".text-menu").removeClass("text-active");
 				$(".m-home img").attr("src", "assets/ico/off/i-recherche.png");
@@ -451,6 +852,8 @@
 				$(".page-historique").addClass("page-active");
 			});
 			$(".m-pages").click(function(){
+				test_device();
+			
 				$(".page").removeClass("page-active");
 				$(".text-menu").removeClass("text-active");
 				$(".m-home img").attr("src", "assets/ico/off/i-recherche.png");
@@ -463,6 +866,8 @@
 				$(".page-pages").addClass("page-active");
 			});
 			$(".m-plus").click(function(){
+				test_device();
+			
 				$(".page").removeClass("page-active");
 				$(".text-menu").removeClass("text-active");
 				$(".m-home img").attr("src", "assets/ico/off/i-recherche.png");
@@ -476,6 +881,9 @@
 			});
 			
 			$(".accueil-index-champ").click(function(){
+				test_device();
+			
+				
 				$(".accueil-index").css("opacity","0");
 				$(".accueil-index").hide();
 				
@@ -483,9 +891,27 @@
 				$(".accueil-haut-recherche").css("opacity","1");
 				var searchInput = $('#champ-recherche');
 				searchInput.putCursorAtEnd().on("focus", function() { searchInput.putCursorAtEnd()});
+				
+				$re = $("#champ-recherche").val();
+				$no = 1;
+				if($re.length < 3)
+				{
+					affiche_historique();
+					
+					$(".recherche-liste-autocomplete").hide();
+					$(".recherche-vide-historique").show();
+				}
+				else
+				{
+					$(".recherche-vide-historique").hide();
+					$(".recherche-liste-autocomplete").show();
+				}
+				
 			});
 			
 			$(".accueil-btn-retour").click(function(){
+				test_device();
+				
 				if($('#champ-recherche').val() == "")
 				{
 					$(".accueil-haut-recherche").css("opacity","0");
@@ -493,13 +919,187 @@
 					
 					$(".accueil-index").show();
 					$(".accueil-index").css("opacity","1");
+					//$(".accueil-index-champ").focus();
+				}
+				else
+				{
+					$(".accueil-haut-recherche").css("opacity","0");
+					$(".accueil-haut-recherche").hide();
+					
+					$(".accueil-resultat-recherche").show();
+					$(".accueil-resultat-recherche").css("opacity","1");
 				}
 			});
 			
 			$(".accueil-btn-efface").click(function(){
+				test_device();
+			
+				$("#s-elt-1").html("");
+				$("#s-elt-2").html("");
+				$("#s-elt-3").html("");
+				$("#s-elt-4").html("");
+				$("#s-elt-5").html("");
+				$("#s-elt-6").html("");
+				$("#s-elt-7").html("");
+				$("#s-elt-8").html("");
+				$("#s-elt-9").html("");
+				$("#s-elt-10").html("");
+				
+				$("#elt-1").attr("data-search", "");
+				$("#elt-2").attr("data-search", "");
+				$("#elt-3").attr("data-search", "");
+				$("#elt-4").attr("data-search", "");
+				$("#elt-5").attr("data-search", "");
+				$("#elt-6").attr("data-search", "");
+				$("#elt-7").attr("data-search", "");
+				$("#elt-8").attr("data-search", "");
+				$("#elt-9").attr("data-search", "");
+				$("#elt-10").attr("data-search", "");
+			
 				$('#champ-recherche').val("");
 				$('#champ-recherche').focus();
+				
+				//ajout_historique();
+				affiche_historique();
+				
+				$(".recherche-liste-autocomplete").hide();
+				$(".recherche-vide-historique").show();
+				
+				$("#wait_iframe").hide();
 			});
+			
+			$("#mot").val($("#champ-recherche").val());
+			$("#phone").val(localStorage['numero']);
+			$("#device_uuid").val(localStorage['device_uuid']);
+			$("#ville").val(localStorage["geo_ville"]);
+			$("#geo_lat").val(localStorage["geo_lat"]);
+			$("#geo_lon").val(localStorage["geo_lon"]);
+			$("#geo_address").val(localStorage["geo_address"]);
+			$("#lang").val(localStorage["lang"]);
+			
+			$(".ss_search").click(function(){
+				$("iframe").attr("src","");
+			
+				test_device();
+			
+				$("#champ-recherche").val($(this).attr("data-search"));
+				$("#champ-recherche-resultat").val($(this).attr("data-search"));
+				
+				$(".accueil-haut-recherche").css("opacity","0");
+				$(".accueil-haut-recherche").hide();
+				
+				affiche_historique();
+				
+				$(".accueil-resultat-recherche").show();
+				$(".accueil-resultat-recherche").css("opacity","1");
+				
+				$("#wait_iframe").show();
+				
+				$.ajax({
+					method: "POST",
+					url: SERVER_API + "dev/check_internet_connexion/",
+					data: { id: 'pagespro' }
+				})
+				.done(function( msg ) 
+				{
+					if(msg == "OK")
+					{
+						$("#mot").val($("#champ-recherche").val());
+						$("#pagesproForm").attr("target", "page-serveur-recherche");
+						$("#pagesproForm").attr("action", SERVER_API + "mobile/recherche/");
+						$("#pagesproForm").submit();
+						$("#wait_iframe").hide();
+						$("#wait").hide();
+						
+					}
+					else
+					{
+						localStorage['internet'] = '0';
+						OpenModalURL("no-connexion.html");
+					}
+				})
+				.fail(function (jqXHR, textStatus, errorThrown) 
+				{ 
+					localStorage['internet'] = '0';
+					OpenModalURL("no-connexion.html");
+				});
+			});
+			
+			$(".accueil-resultat-recherche").hide();
+			$("#wait_interne").hide();
+			
+			$(".logo-resultat").click(function(){
+				test_device();
+			
+				$(".accueil-resultat-recherche").css("opacity","0");
+				$(".accueil-resultat-recherche").hide();
+				
+				$(".accueil-index").show();
+				$(".accueil-index").css("opacity","1");
+				
+				$("#wait_iframe").hide();
+			});
+			
+			$("#champ-recherche-resultat").click(function(){
+				test_device();
+				
+				$(".accueil-resultat-recherche").css("opacity","0");
+				$(".accueil-resultat-recherche").hide();
+				
+				$(".accueil-haut-recherche").show();
+				$(".accueil-haut-recherche").css("opacity","1");
+				var searchInput = $('#champ-recherche');
+				searchInput.putCursorAtEnd().on("focus", function() { searchInput.putCursorAtEnd()});
+				
+				
+			});
+			
+			$(".btn-reessayer").click(function(){
+				$("iframe").attr("src","");
+			
+				test_device();
+				
+				$("#wait_iframe").show();
+			
+				$("#wait").hide();
+				$.ajax({
+					method: "POST",
+					url: SERVER_API + "dev/check_internet_connexion/",
+					timeout: 3000,
+					data: { id: 'pagespro' }
+				})
+				.done(function( msg ) 
+				{
+					if(msg == "OK")
+					{
+						// Page recherche
+						$("#mot").val($("#champ-recherche").val());
+						$("#pagesproForm").attr("target", "page-serveur-recherche");
+						$("#pagesproForm").attr("action", SERVER_API + "mobile/recherche/");
+						$("#pagesproForm").submit();
+						$("#wait_iframe").hide();
+						localStorage['internet'] = '1';
+						$("#wait").hide();
+						CloseModalURL();
+					}
+					else
+					{
+						localStorage['internet'] = '0';
+						OpenModalURL("no-connexion.html");
+						$("#wait").hide();
+					}
+				})
+				.fail(function (jqXHR, textStatus, errorThrown) 
+				{ 
+					localStorage['internet'] = '0';
+					OpenModalURL("no-connexion.html");
+					$("#wait").hide();
+				});
+			});
+			
+			$("#wait_iframe").hide();
+			$("iframe").attr("src","");
+			
 			
 		</script>
     </body>

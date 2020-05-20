@@ -537,7 +537,8 @@
 				if(($('#code_1').val() != "") && ($('#code_2').val() != "") && ($('#code_3').val() != "") && ($('#code_4').val() != ""))
 				{
 					if(num_comde == 4)
-					{
+					{	
+						$("#wait").show();
 						$phone = localStorage['numero'];
 						$localcode = localStorage["code_time"];
 						$localcode = $localcode.split("|");

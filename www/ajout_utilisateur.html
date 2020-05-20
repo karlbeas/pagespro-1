@@ -305,7 +305,12 @@
 		<script src="assets/lang/lang_en.js"></script>
 		<script src="assets/lang/lang_fr.js"></script>
 		<script>
-		
+			is_accueil = localStorage["is_accueil"];
+			if(is_accueil == '1')
+			{ 
+				window.location.href = 'accueil.html'; 
+			}
+			
 			var lang = localStorage["lang"];
 			var var_texte = '';
 			if(lang == 'fr'){ var_texte = connexion_text_fr; } else { var_texte = connexion_text_en; }
@@ -434,6 +439,7 @@
 								if(server.retour == "OK")
 								{
 									localStorage["server"] = msg;
+									localStorage["recherche"] = '{ "1" : {"id": "1", "mot": "pagespro", "date": "' + getActualFullDate() + '"} }';
 								}
 								localStorage["is_user"] = "0";
 								localStorage["is_accueil"] = "1";
