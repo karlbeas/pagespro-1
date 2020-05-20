@@ -20,6 +20,9 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <preference name="Orientation" value="portrait" />
+        <preference name="AndroidPersistentFileLocation" value="Internal" />
+        <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+        <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,assets,root" />
         <icon src="www/img/logo.png" />
         <icon density="ldpi" src="www/img/logo.png" />
         <icon density="mdpi" src="www/img/logo.png" />
@@ -31,6 +34,9 @@
         <allow-intent href="itms-apps:*" />
         <preference name="Orientation" value="portrait" />
         <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="iosPersistentFileLocation" value="Library" />
+        <preference name="iosPersistentFileLocation" value="Compatibility" />
+        <preference name="iosExtraFilesystems" value="library,library-nosync,documents,documents-nosync,cache,bundle,root" />
         <icon height="180" platform="ios" src="www/img/Icon-App-60x60@3x.png" width="180" />
         <icon height="120" platform="ios" src="www/img/Icon-App-60x60@2x.png" width="120" />
         <icon height="120" platform="ios" src="www/img/Icon-App-40x40@3x.png" width="120" />
@@ -46,6 +52,9 @@
         <config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist">
             <false />
         </config-file>
+        <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+            <string>Pour une meilleure expérience activer la Géolocalisation.</string>
+        </edit-config>
     </platform>
     <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.3" />
@@ -59,6 +68,7 @@
     </plugin>
     <plugin name="cordova-plugin-media-capture" spec="^3.0.3" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.2" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.2" />
     <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^7.1.4" />
 </widget>
