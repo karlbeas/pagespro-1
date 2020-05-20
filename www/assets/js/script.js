@@ -44,7 +44,7 @@ function TestConnexion()
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    	StatusBar.hide();
+    StatusBar.hide();
 	
 	localStorage['device_uuid'] 		= device.uuid;
 	localStorage['device_serial'] 		= device.serial;
@@ -52,12 +52,6 @@ function onDeviceReady() {
 	localStorage['device_manufacturer']	= device.manufacturer;
 	localStorage['device_model']		= device.model;
 }
-
-function alertDismissed() {
-    // do something
-}
-
-
 
 function base64(file, callback){
 	var coolFile = {};
@@ -76,6 +70,87 @@ function base64(file, callback){
 	coolFile.filename = file.name;
 	reader.readAsBinaryString(file);
 }
+
+
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+function getActualFullDate() {
+    var d = new Date();
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth()+1);
+    var year = addZero(d.getFullYear());
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var s = addZero(d.getSeconds());
+    return year + "-" + month + "-" + day + " " + h + ":" + m + ":" + s;
+}
+
+function RandomID() {
+    var d = new Date();
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth()+1);
+    var year = addZero(d.getFullYear());
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var s = addZero(d.getSeconds());
+    return year + month + day + h + m + s;
+}
+
+function getActualHour() {
+    var d = new Date();
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var s = addZero(d.getSeconds());
+    return h + ":" + m + ":" + s;
+}
+
+function getActualDate() {
+    var d = new Date();
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth()+1);
+    var year = addZero(d.getFullYear());
+    return day + ". " + month + ". " + year;
+}
+
+function LimitTXT(ele, len){
+	if(ele.length <= len){
+		return ele;
+	}
+	else
+	{
+		str = ele.substr(0, (len - 1));
+		return str + " ...";
+	}
+}
+
+function TxtAccent(replaceString) {
+	var regex; 
+	var find = ["é","è","î","ï","ù","û","ü","à","â","ä","ô","ö"];
+	var replace = ["e","e","i","i","u","u","u","a","a","a","o","o"];
+	
+	for (var i = 0; i < find.length; i++) {
+		regex = new RegExp(find[i], "g");
+		replaceString = replaceString.replace(regex, replace[i]);
+	}
+	return replaceString;
+};
+
+function TxtPPQuery(replaceString) {
+	var regex; 
+	var find = [" ","."];
+	var replace = ["_","-"];
+	
+	for (var i = 0; i < find.length; i++) {
+		regex = new RegExp(find[i], "g");
+		replaceString = replaceString.replace(regex, replace[i]);
+	}
+	return replaceString;
+};
 
 /* Fonctions génériques */
 (function($){
