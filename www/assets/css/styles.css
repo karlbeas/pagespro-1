@@ -77,6 +77,8 @@ body {
     outline: none;
 }
 
+
+
 /* Pagespro Modals */
 .pagespro-modal-rideau
 {
@@ -118,6 +120,18 @@ body {
 	height: 100%;
 	border: 0px;
 	overflow: auto;
+}
+
+.btn-reessayer
+{
+	position: absolute;
+	width: 100px;
+	bottom: 30px;
+	left: calc(50% - 50px);
+	background: #000000;
+	border-radius: 25px;
+	color: #ffffff;
+	font-size: 14px;
 }
 
 
