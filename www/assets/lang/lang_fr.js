@@ -44,4 +44,6 @@ var accueil_text_fr =
 				"pages"					:	"Mes pages", 
 				"plus"					:	"Plus", 
 				"recherchez"			:	"Que recherchez-vous?", 
+				"rrecentes"				:	"Recherches récentes", 
+				"reessayer"				:	"Réessayer", 
 			};

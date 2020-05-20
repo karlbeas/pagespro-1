@@ -44,4 +44,6 @@ var accueil_text_en =
 				"pages"					:	"My Pages", 
 				"plus"					:	"More", 
 				"recherchez"			:	"What do you need?", 
+				"rrecentes"				:	"Recent research", 
+				"reessayer"				:	"Retry", 
 			};
