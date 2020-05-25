@@ -48,7 +48,7 @@
         <icon height="40" platform="ios" src="www/img/Icon-App-20x20@2x.png" width="40" />
         <splash height="1280" src="www/screen/iphone.png" width="768" />
         
-        </config-file>
+        
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
             <string>Pour une meilleure expérience activer la Géolocalisation.</string>
         </edit-config>
